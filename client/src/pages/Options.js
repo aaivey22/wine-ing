@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // import context for global state
 import UserInfoContext from '../utils/UserInfoContext';
@@ -8,17 +7,21 @@ import UserInfoContext from '../utils/UserInfoContext';
 import * as API from '../utils/API';
 import AuthService from '../utils/auth';
 
-function Home() {
+function AddToCart() {
+    const handleAddButton = () =>{
+        console.log("add to cart button clicked")
 
+    }
 
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>HOME</h1>
+          <h1>Options</h1>
         </Container>
       </Jumbotron>
       <Container>
+ 
         <h2>
             Wine-ing is always permitted here.
         </h2>
@@ -26,8 +29,11 @@ function Home() {
             Supporting small-name wineries with big-time quality! Our fine wine selection includes vegan and bioavailable varietials. 
         </h3>
 
-        <Button className='btn-block btn-danger' href="/options">
-                    Let's Begin
+        <h5>
+          product 1
+        </h5>
+        <Button className='btn-block btn-danger' onClick={() => handleAddButton()}>
+                    add to cart
                   </Button>
         {/* <CardColumns>
           {userData.savedBooks.map((book) => {
@@ -51,4 +57,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AddToCart;

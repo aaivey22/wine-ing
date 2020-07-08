@@ -4,6 +4,7 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import Options from './pages/Options';
 
 import * as API from './utils/API';
 import AuthService from './utils/auth';
@@ -41,18 +42,17 @@ function App() {
 
   return (
     <Router>
-      <>
         {/* wrap our entire app in context provider and provide userInfo state as value */}
         <UserInfoContext.Provider value={userInfo}>
           <Navbar />
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/options' component={Options} />
             <Route exact path='/saved' component={SavedBooks} />
             <Route exact path='/search-books' component={SearchBooks} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
         </UserInfoContext.Provider>
-      </>
     </Router>
   );
 }
